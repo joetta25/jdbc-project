@@ -1,16 +1,38 @@
 package com.cognixia.jump.doaImpl;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
 
 import com.cognixia.jump.doa.StudentDAO;
+import com.cognixia.jump.connection.ConnectionManager;
 import com.cognixia.jump.models.Student;
 
 public class StudentDAOImp implements StudentDAO {
 
 	@Override
 	public List<Student> getAllStudents() {
-		// TODO Auto-generated method stub
-		return null;
+
+		
+		
+		
+		try {
+			
+           Connection conn = ConnectionManager.getConnection();
+			
+			Statement stmt = conn.createStatement();
+			
+			ResultSet rs = stmt.executeQuery("select * from student");
+			
+			
+			while(rs.next()) {
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 	@Override
