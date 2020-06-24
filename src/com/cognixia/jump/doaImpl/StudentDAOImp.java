@@ -97,9 +97,15 @@ public class StudentDAOImp implements StudentDAO {
 			
 			
 		      // execute the preparedstatement
-		      preparedStmt.execute();
+		     boolean update = preparedStmt.execute();
+		      
+		      if(update) {
+		    	  
+		    	  return true;
+		    	  
+		      }
 		 
-		      connection.close();
+		      
 			
 		} catch (SQLException e) {
 			 System.err.println("Got an exception!");
