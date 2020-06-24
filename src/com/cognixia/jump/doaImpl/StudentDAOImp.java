@@ -77,7 +77,7 @@ public class StudentDAOImp implements StudentDAO {
 	@Override
 	public boolean addStudent(Student student) {
 		
-		 String query = " insert into users (id, first_name, last_name, gender, date_of_birth, credits, addr_id, dept_id)"
+		 String query = "insert into student (id, first_name, last_name, gender, date_of_birth, credits, addr_id, dept_id)"
 			        + " values (?, ?, ?, ?, ?, ?, ?, ?)"; 
 		
 		try {
